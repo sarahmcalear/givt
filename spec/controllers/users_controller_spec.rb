@@ -13,16 +13,15 @@ describe Api::V1::UsersController, type: :controller do
 
   describe 'Post #create' do
     context 'with valid attributes' do
-      before do
 
-      end
       it 'saves the new contact in the database' do
         expect{
           post :create, user: FactoryGirl.attributes_for(:user)
         }.to change(User,:count).by(1)
       end
       it 'redirects to the homepage' do
-        # post :
+        post :create, user: FactoryGirl.attributes_for(:user)
+        # response.should redirect_to
       end
     end
 

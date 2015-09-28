@@ -21,6 +21,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'devise'
+gem 'devise_invitable'
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
+gem 'cancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,5 +49,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'ffaker'
+  gem 'shoulda-matchers', require: false
+
 end
 

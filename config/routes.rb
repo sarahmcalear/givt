@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users, skip: [:sessions, :passwords, :registrations]
 
   namespace :api, path: '/', constraints: {subdomain: 'api'} do
     namespace :v1 do
+      root 'welcome#index'
+      devise_scope :user do
+        post 'sessions' => 'sessions#create', :as => 'login'
+      end
       resources :users
     end
   end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
